@@ -2,9 +2,8 @@ const LINKTREE = {
    user: {
       name: "jeferson Barrero",
       username: "jeffercbs",
-      link: "https://jeffercbsLINKTREE.vercel.app",
-      avatar: "https://github.com/jeffercbs.png",
-      desc: "📝 Fitness | Young web developer | Technology enthusiast | @platzi student | content creator | occasional writer",
+      url: "https://jeffercbs.me",
+      desc: "Fitness | Young web developer | Technology enthusiast | @platzi student | content creator | occasional writer",
    },
    links: {
       primarys: [

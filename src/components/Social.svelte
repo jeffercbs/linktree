@@ -11,27 +11,25 @@
 
 <div class="social-links">
    <Button href={social.github} type="icon">
-      <Github width="50" height="50" color="white" />
+      <Github width="50" height="50" color="black" />
    </Button>
    <Button href={social.linkedin} type="icon">
-      <Linkedin width="50" height="50" color="white" />
+      <Linkedin width="50" height="50" color="black" />
    </Button>
    <Button href={social.instagram} type="icon">
-      <Instagram width="50" height="50" color="white" />
+      <Instagram width="50" height="50" color="black" />
    </Button>
    <Button href={social.youtube} type="icon">
-      <Youtube width="50" height="50" color="white" />
+      <Youtube width="50" height="50" color="black" />
    </Button>
 </div>
 
 <style>
    .social-links {
+      @apply lg:justify-start justify-center;
       display: flex;
       flex-wrap: wrap;
-      justify-content: center;
-      align-items: center;
       width: 100%;
       height: 50px;
-      margin: 20px 0;
    }
 </style>

@@ -22,7 +22,12 @@
          height="50"
          class="rounded-full"
       />
-      <img src="text.webp" alt="" width="200px" />
+      <img
+         src="text.webp"
+         alt="jeferson barrero"
+         class="md:flex hidden"
+         width="200px"
+      />
    {/if}
    <button
       class="btn-share"

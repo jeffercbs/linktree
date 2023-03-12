@@ -32,7 +32,7 @@
 
 <style>
    .btn {
-      @apply relative text-white flex justify-center items-center my-2 shadow-2xl;
+      @apply relative text-white flex justify-center items-center my-2 font-semibold;
    }
    .icon-hover {
       @apply hidden justify-center items-center w-9 h-9 absolute -top-2 -right-2 bg-white rounded-full p-2;

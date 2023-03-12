@@ -12,18 +12,12 @@
 <main>
    <Header />
 
-   <div class="subHeader">
-      <img
-         src="/jeferson.webp"
-         width="140"
-         height="140"
-         alt="jeferson barrero"
-         class="rounded-full border-2 border-white"
-      />
+   <div class="heading">
+      <img src="/jeferson.webp" width="auto" alt="avatar" class="avatar" />
 
-      <div class="pt-8">
-         <img src="/text.webp" width="320" class="mx-auto" alt="" />
-         <p class="text-base font-medium">{desc}</p>
+      <div class="flex flex-col lg:items-start items-center lg:text-left">
+         <img src="/text.webp" width="320" alt="Jeferson Barrero" />
+         <p class="text-lg leading-tight font-medium">{desc}</p>
          <Social />
       </div>
    </div>
@@ -31,7 +25,7 @@
    <div class="flex flex-col w-11/12 lg:w-3/5 mx-auto mb-12">
       {#each LINKTREE.links.primarys as btn}
          <Button type={btn.type} href={btn.link} primary>
-            <span>{btn.text}</span>
+            <span class="text-sm lg:text-base">{btn.text}</span>
          </Button>
       {/each}
    </div>
@@ -41,7 +35,7 @@
    {/if}
 
    <footer class="absolute inset-x-0 bottom-0 my-3">
-      <small class="font-medium">
+      <small class="font-medium leading-tight">
          &copy; Hello world, this project is Open Source created by <a
             href="http://github.com/jeffercbs"
             target="_blank"
@@ -53,7 +47,10 @@
 </main>
 
 <style>
-   .subHeader {
-      @apply flex flex-col justify-center items-center text-center max-w-lg mx-auto my-5;
+   .heading {
+      @apply flex lg:flex-row flex-col items-center gap-4 lg:gap-8 max-w-3xl mx-auto py-8 mt-12;
+   }
+   .avatar {
+      @apply rounded-full border-2 lg:w-36 w-40 border-white object-fill;
    }
 </style>
