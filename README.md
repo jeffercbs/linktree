@@ -2,6 +2,8 @@
 
 Este proyecto tiene como objetivo crear un linktree, es decir, una página que contenga una lista de enlaces a redes sociales, portafolios o páginas web personales en una sola dirección URL.
 
+![preview](./.github/ui.jpeg)
+
 # 🧰 Tecnologías utilizadas
 
 -  **Vite** como bundler y servidor de desarrollo
