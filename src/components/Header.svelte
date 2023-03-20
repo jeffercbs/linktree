@@ -22,12 +22,7 @@
          height="50"
          class="rounded-full"
       />
-      <img
-         src="text.webp"
-         alt="jeferson barrero"
-         class="md:flex hidden"
-         width="200px"
-      />
+      <p class="md:flex hidden font-extrabold text-3xl capitalize">linktree</p>
    {/if}
    <button
       class="btn-share"

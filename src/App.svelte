@@ -16,25 +16,29 @@
       <img src="/jeferson.webp" width="auto" alt="avatar" class="avatar" />
 
       <div class="flex flex-col lg:items-start items-center lg:text-left">
-         <img src="/text.webp" width="320" alt="Jeferson Barrero" />
+         <img src="/text.webp" width="320" alt="Jeferson Barrero" class="md:flex hidden" />
+         <h1 class="md:hidden flex text-3xl font-semibold mb-7">Jeferson Barrero</h1>
          <p class="text-lg leading-tight font-medium">{desc}</p>
          <Social />
       </div>
    </div>
 
-   <div class="flex flex-col w-11/12 lg:w-3/5 mx-auto mb-12">
-      {#each LINKTREE.links.primarys as btn}
-         <Button type={btn.type} href={btn.link} primary>
-            <span class="text-sm lg:text-base">{btn.text}</span>
-         </Button>
-      {/each}
+   <div class="flex flex-col">
+      <span class="uppercase my-4 font-normal text-base">useful links</span>
+      <div class="flex flex-col w-11/12 lg:w-3/5 mx-auto mb-12">
+         {#each LINKTREE.links.primarys as btn}
+            <Button type={btn.type} href={btn.link} primary>
+               <span class="text-sm lg:text-base">{btn.text}</span>
+            </Button>
+         {/each}
+      </div>
    </div>
 
    {#if $setModal}
       <Modal />
    {/if}
 
-   <footer class="absolute inset-x-0 bottom-0 my-3">
+   <footer class="absolute inset-x-0 bottom-0 my-3 mx-4">
       <small class="font-medium leading-tight">
          &copy; Hello world, this project is Open Source created by <a
             href="http://github.com/jeffercbs"

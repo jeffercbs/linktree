@@ -22,10 +22,10 @@
 
 <div class="modal-overlay">
    <div class="modal" transition:blur={{ amount: 0 }}>
-      <div class="header border-b-2 border-b-gray-400">
-         <span class="font-bold uppercase">Share Linktree</span>
-         <button on:click={handleModal}>
-            <XCircle width="30" height="30" />
+      <div class="header flex">
+         <span class="font-extrabold capitalize flex-1">Share Linktree</span>
+         <button on:click={handleModal} class="w-8">
+            <XCircle width="30" height="30" color="red" />
          </button>
       </div>
 
@@ -36,7 +36,7 @@
                   <span class="content">
                      <Twitter width="35" height="35" color="#1D9BF0" />
                   </span>
-                  <small class="text-primary text-sm mt-2">Twitter</small>
+                  <small class="text-white text-sm mt-2">Twitter</small>
                </svelte:fragment>
             </Button>
 
@@ -45,7 +45,7 @@
                   <span class="content">
                      <Facebook width="35" height="35" color="#3b5998" />
                   </span>
-                  <small class="text-primary text-sm mt-2">Facebook</small>
+                  <small class="text-white text-sm mt-2">Facebook</small>
                </svelte:fragment>
             </Button>
 
@@ -54,7 +54,7 @@
                   <span class="content">
                      <Linkedin width="35" height="35" color="#0077b5" />
                   </span>
-                  <small class="text-primary text-sm mt-2">Linkedin</small>
+                  <small class="text-white text-sm mt-2">Linkedin</small>
                </svelte:fragment>
             </Button>
 
@@ -63,7 +63,7 @@
                   <span class="content">
                      <Pinterest width="35" height="35" color="#CB1F27" />
                   </span>
-                  <small class="text-primary text-sm mt-2">Pinterest</small>
+                  <small class="text-white text-sm mt-2">Pinterest</small>
                </svelte:fragment>
             </Button>
 
@@ -72,7 +72,7 @@
                   <span class="content">
                      <Reddit width="35" height="35" />
                   </span>
-                  <small class="text-primary text-sm mt-2">Reddit</small>
+                  <small class="text-white text-sm mt-2">Reddit</small>
                </svelte:fragment>
             </Button>
          </div>
@@ -89,30 +89,31 @@
 
 <style>
    .modal-overlay {
-      @apply fixed inset-0 backdrop-blur-md z-50 flex justify-center items-center;
-      background: rgba(0, 0, 0, 0.5);
+      @apply fixed inset-0 z-50 flex justify-center items-center bg-black/50;
+      backdrop-filter: blur(19px);
    }
    .modal {
-      @apply bg-white md:w-[500px] w-full h-auto md:h-80 rounded-3xl overflow-hidden px-8 py-4 m-4;
+      @apply bg-[#16181A] text-white md:w-[500px] w-full h-auto md:h-80 rounded-3xl overflow-hidden px-8 py-4 m-4 shadow-md;
    }
    .modal .header {
-      @apply h-[10px] flex justify-between items-center py-6;
+      @apply h-[10px] flex justify-between items-center pt-6;
    }
    .buttons {
-      @apply flex gap-4 md:gap-4 h-full flex-wrap text-center md:mt-3 justify-center items-center;
+      @apply flex gap-4 md:gap-4 h-full flex-wrap text-center md:my-7 justify-center items-center;
    }
    .clipboard {
       @apply flex gap-3 py-5;
    }
    .clipboard input {
-      @apply flex-1 px-5 py-2 rounded-xl border-2 border-gray-300 text-sm;
+      @apply flex-1 px-5 py-3 rounded-xl border-2 border-gray-400 text-sm;
       font-family: "poppins", sans-serif;
    }
    .clipboard input:disabled {
-      @apply bg-gray-100;
+      @apply bg-transparent;
    }
+
    .clipboard button {
-      @apply flex w-10 items-center border-2 border-gray-300 p-2 font-bold rounded-xl gap-3 animate-bounce;
+      @apply flex w-10 items-center border-2 border-gray-400 p-2 font-bold rounded-xl gap-3 animate-bounce;
       font-family: "poppins", sans-serif;
    }
 </style>
