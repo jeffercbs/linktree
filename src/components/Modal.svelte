@@ -93,7 +93,8 @@
       backdrop-filter: blur(19px);
    }
    .modal {
-      @apply bg-[#16181A] text-white md:w-[500px] w-full h-auto md:h-80 rounded-3xl overflow-hidden px-8 py-4 m-4 shadow-md;
+      @apply border-[1px] border-white/30 text-white md:w-[500px] w-full h-auto md:h-80 rounded-3xl overflow-hidden px-8 py-4 m-4 shadow-md;
+      background: var(--gradient);
    }
    .modal .header {
       @apply h-[10px] flex justify-between items-center pt-6;

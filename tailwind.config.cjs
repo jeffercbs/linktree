@@ -4,8 +4,9 @@ const config = {
    theme: {
       extend: {
          colors: {
-            primary: "#030303",
-            brawnis: "#292524",
+            primary: "#1750FEff",
+            dark: " #ffffff00",
+            emeral: "#06B863ff",
             grey: "#e9ecef",
          },
       },

@@ -1,4 +1,13 @@
 @tailwind base;
+:root {
+   --gradient: radial-gradient(
+         43.37% 67.64% at 94.65% 2.73%,
+         #406afe4d 0%,
+         #aa40fe30 36.98%,
+         #ffffff00 93.23%
+      ),
+      #0b0a0a;
+}
 
 *,
 body,
@@ -6,8 +15,9 @@ html {
    font-family: "Poppins", sans-serif;
 }
 body {
-   @apply flex flex-col relative m-0 place-items-center text-brawnis;
-   background: #d3f36b;
+   @apply flex flex-col relative m-0 place-items-center text-white;
+
+   background: var(--gradient);
 }
 
 #app {
