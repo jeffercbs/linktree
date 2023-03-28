@@ -8,7 +8,7 @@
    import setModal from "./stores/modal";
    import { GoogleAnalytics } from "@beyonk/svelte-google-analytics";
 
-   const GA = import.meta.env.VITE_GA_ID;
+   const GA = process.env.VITE_GA_ID;
 </script>
 
 <GoogleAnalytics properties={[GA]} />
