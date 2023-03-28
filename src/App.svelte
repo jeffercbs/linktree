@@ -5,6 +5,15 @@
    import Modal from "./components/Modal.svelte";
    import LINKTREE from "./consts";
    import setModal from "./stores/modal";
+   import { onMount } from "svelte";
+
+   onMount(() => {
+      const GH_ID = process.env.ANALITICS_ID;
+      const script = document.createElement("script");
+      script.src = `https://www.googletagmanager.com/gtag/js?id=${GH_ID}`;
+      script.async = true;
+      document.body.appendChild(script);
+   });
 </script>
 
 <main>
