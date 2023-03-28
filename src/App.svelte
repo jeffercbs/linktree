@@ -5,7 +5,7 @@
    import Heading from "./components/Heading.svelte";
    import Modal from "./components/Modal.svelte";
    import LINKTREE from "./consts";
-   import setModal from "./stores/modal";
+   import { openModal } from "./stores";
    import { GoogleAnalytics } from "@beyonk/svelte-google-analytics";
 
    const GA = "G-Z56EXDTG1D";
@@ -28,7 +28,7 @@
       </div>
    </div>
 
-   {#if $setModal}
+   {#if $openModal}
       <Modal />
    {/if}
 

@@ -1,22 +1,28 @@
 <script>
    import { blur } from "svelte/transition";
    import returnLink from "../lib/returnLink";
-   import setModal from "../stores/modal";
+   import { handledOpenModal } from "../stores";
    import Button from "./Button.svelte";
-   import Pinterest from "./Icons/Pinterest.svelte";
    import Clipboard from "./Icons/Clipboard.svelte";
+   import Facebook from "./Icons/Facebook.svelte";
+   import Linkedin from "./Icons/Linkedin.svelte";
+   import Pinterest from "./Icons/Pinterest.svelte";
+   import Reddit from "./Icons/Reddit.svelte";
    import Twitter from "./Icons/Twitter.svelte";
    import XCircle from "./Icons/XCircle.svelte";
-   import Linkedin from "./Icons/Linkedin.svelte";
-   import Reddit from "./Icons/Reddit.svelte";
-   import Facebook from "./Icons/Facebook.svelte";
+   import { writable } from "svelte/store";
 
-   const handleModal = () => setModal.set(!$setModal);
+   const msgCopy = writable(false);
 
    const copy = () => {
       navigator.clipboard
          .writeText(returnLink())
          .catch(() => console.error("Error copying link"));
+
+      msgCopy.set(true);
+      setTimeout(() => {
+         msgCopy.set(false);
+      }, 2000);
    };
 </script>
 
@@ -24,7 +30,7 @@
    <div class="modal" transition:blur={{ amount: 0 }}>
       <div class="header flex">
          <span class="font-extrabold capitalize flex-1">Share Linktree</span>
-         <button on:click={handleModal} class="w-8">
+         <button on:click={handledOpenModal} class="w-8">
             <XCircle width="30" height="30" />
          </button>
       </div>
@@ -78,7 +84,15 @@
          </div>
 
          <div class="clipboard">
-            <input type="text" value={returnLink()} disabled />
+            <div class="flex flex-col flex-1">
+               <input type="text" value={returnLink()} disabled />
+               {#if $msgCopy}
+                  <span
+                     transition:blur={{ amount: 0 }}
+                     class="text-sm text-white mt-2">👍 Link copied!</span
+                  >
+               {/if}
+            </div>
             <button value="copy" on:click={copy}>
                <Clipboard width="20px" height="20px" />
             </button>
@@ -97,7 +111,7 @@
       background: var(--gradient);
    }
    .modal .header {
-      @apply h-[10px] flex justify-between items-center pt-6;
+      @apply h-[10px] flex justify-between  pt-6;
    }
    .buttons {
       @apply flex gap-4 md:gap-4 h-full flex-wrap text-center md:my-7 justify-center items-center;
@@ -106,15 +120,11 @@
       @apply flex gap-3 py-5;
    }
    .clipboard input {
-      @apply flex-1 px-5 py-3 rounded-xl border-2 border-gray-400 text-sm;
+      @apply w-full md:px-5 px-2 py-3 rounded-xl border-2 border-gray-400 text-sm disabled:bg-transparent;
       font-family: "poppins", sans-serif;
    }
-   .clipboard input:disabled {
-      @apply bg-transparent;
-   }
-
    .clipboard button {
-      @apply flex w-10 items-center border-2 border-gray-400 p-2 font-bold rounded-xl gap-3 animate-bounce;
+      @apply flex w-10 h-12 items-center border-2 border-gray-400 p-2 font-bold rounded-xl gap-3 animate-bounce;
       font-family: "poppins", sans-serif;
    }
 </style>

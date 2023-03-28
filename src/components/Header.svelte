@@ -1,18 +1,18 @@
 <script>
    import { onMount } from "svelte";
-   import isTop from "../stores/isTop";
+   import { isTop, openModal, handledOpenModal } from "../stores";
    import Share from "./Icons/Share.svelte";
    let y;
 
-   function handleModal() {
+   function handledIsTop() {
       y > 100 ? isTop.set(true) : isTop.set(false);
    }
    onMount(() => {
-      handleModal();
+      handledIsTop();
    });
 </script>
 
-<svelte:window bind:scrollY={y} on:scroll={handleModal} />
+<svelte:window bind:scrollY={y} on:scroll={handledIsTop} />
 
 {#if $isTop}
    <img
@@ -39,7 +39,7 @@
    <button
       class="btn-share"
       class:active={$isTop}
-      on:click={handleModal}
+      on:click={handledOpenModal}
       aria-label="share linktree"
    >
       <Share width="60" height="60" color={$isTop ? "#ffffff" : "#000000"} />
