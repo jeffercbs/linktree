@@ -1,22 +1,29 @@
 <script>
+   import { onMount } from "svelte";
    import isTop from "../stores/isTop";
-   import setModal from "../stores/modal";
    import Share from "./Icons/Share.svelte";
-   import { onDestroy, onMount } from "svelte";
+   let y;
 
-   const handleModal = () => setModal.set(!$setModal);
+   function handleModal() {
+      y > 100 ? isTop.set(true) : isTop.set(false);
+   }
    onMount(() => {
-      const onScroll = () => {
-         window.scrollY > 100 ? isTop.set(true) : isTop.set(false);
-      };
-
-      window.addEventListener("scroll", onScroll);
-      onScroll();
-      onDestroy(() => {
-         window.removeEventListener("scroll", onScroll);
-      });
+      handleModal();
    });
 </script>
+
+<svelte:window bind:scrollY={y} on:scroll={handleModal} />
+
+{#if $isTop}
+   <img
+      src="/jeffercbs.png"
+      alt="logo"
+      width="50"
+      height="50"
+      class="rounded-full"
+   />
+   <p class="md:flex hidden font-extrabold text-3xl capitalize">linktree</p>
+{/if}
 
 <header class:istop={$isTop}>
    {#if $isTop}

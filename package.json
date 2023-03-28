@@ -9,6 +9,7 @@
       "preview": "vite preview"
    },
    "devDependencies": {
+      "@beyonk/svelte-google-analytics": "^2.6.4",
       "@sveltejs/vite-plugin-svelte": "^2.0.3",
       "@types/node": "^18.15.10",
       "autoprefixer": "^10.4.14",

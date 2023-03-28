@@ -25,7 +25,7 @@
       <div class="header flex">
          <span class="font-extrabold capitalize flex-1">Share Linktree</span>
          <button on:click={handleModal} class="w-8">
-            <XCircle width="30" height="30" color="red" />
+            <XCircle width="30" height="30" />
          </button>
       </div>
 

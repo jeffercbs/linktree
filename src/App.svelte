@@ -1,20 +1,17 @@
 <script>
+   // @ts-nocheck
    import Button from "./components/Button.svelte";
    import Header from "./components/Header.svelte";
    import Heading from "./components/Heading.svelte";
    import Modal from "./components/Modal.svelte";
    import LINKTREE from "./consts";
    import setModal from "./stores/modal";
-   import { onMount } from "svelte";
+   import { GoogleAnalytics } from "@beyonk/svelte-google-analytics";
 
-   onMount(() => {
-      const GH_ID = process.env.ANALITICS_ID;
-      const script = document.createElement("script");
-      script.src = `https://www.googletagmanager.com/gtag/js?id=${GH_ID}`;
-      script.async = true;
-      document.body.appendChild(script);
-   });
+   const GA = import.meta.env.VITE_GA_ID;
 </script>
+
+<GoogleAnalytics properties={[GA]} />
 
 <main>
    <Header />
