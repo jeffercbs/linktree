@@ -13,7 +13,7 @@
       "@sveltejs/vite-plugin-svelte": "^2.0.3",
       "@types/node": "^18.15.10",
       "autoprefixer": "^10.4.14",
-      "postcss": "^8.4.21",
+      "postcss": "^8.4.31",
       "postcss-load-config": "^4.0.1",
       "svelte": "^3.57.0",
       "svelte-preprocess": "^5.0.3",
